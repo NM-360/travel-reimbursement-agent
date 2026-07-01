@@ -1,0 +1,125 @@
+[
+  {
+    "claim_id": "CLM-001",
+    "decision": "Approve",
+    "approved_amount": 396.0,
+    "rejected_amount": 0.0,
+    "deductions": [],
+    "missing_documents": [],
+    "policy_references": [],
+    "confidence": 1.0,
+    "reason_codes": [],
+    "explanation": "All line items are within the per-diem caps, receipts are complete, and the claim is eligible for reimbursement. No deductions or exceptions are required."
+  },
+  {
+    "claim_id": "CLM-002",
+    "decision": "Partially Approve",
+    "approved_amount": 550.0,
+    "rejected_amount": 327.0,
+    "deductions": [
+      {
+        "item": "lodging: 2 nights",
+        "amount": 140.0,
+        "reason": "Over lodging cap $250/night x 2 = $500"
+      },
+      {
+        "item": "meals: Dinner incl. wine",
+        "amount": 120.0,
+        "reason": "Non-reimbursable item detected ('wine')"
+      },
+      {
+        "item": "meals: Cocktails",
+        "amount": 45.0,
+        "reason": "Non-reimbursable item detected ('cocktail')"
+      },
+      {
+        "item": "ground_transport on 2026-05-19",
+        "amount": 22.0,
+        "reason": "Over ground transport cap $50/day (claimed $72.0)"
+      }
+    ],
+    "missing_documents": [],
+    "policy_references": [
+      "POL-LODGE-01",
+      "POL-MEAL-02",
+      "POL-GEN-04",
+      "POL-GROUND-01",
+      "POL-APPR-02"
+    ],
+    "confidence": 0.95,
+    "reason_codes": [
+      "OVER_LODGING_CAP",
+      "NON_REIMBURSABLE_ITEM",
+      "OVER_GROUND_TRANSPORT_CAP",
+      "NEEDS_MANAGER_APPROVAL"
+    ],
+    "explanation": "The claim is partially approved with a total of $550.00 approved. The lodging, meals (wine and cocktails), and ground transport are partially or fully rejected due to exceeding caps or non-reimbursable items. The claim is eligible and requires manager approval."
+  },
+  {
+    "claim_id": "CLM-003",
+    "decision": "Reject",
+    "approved_amount": 0.0,
+    "rejected_amount": 298.0,
+    "deductions": [],
+    "missing_documents": [
+      "airfare: Economy"
+    ],
+    "policy_references": [
+      "POL-GEN-02",
+      "POL-DOC-02"
+    ],
+    "confidence": 0.95,
+    "reason_codes": [
+      "STALE_SUBMISSION",
+      "NEEDS_RECEIPTS"
+    ],
+    "explanation": "The claim was submitted 114 days after the trip end, which exceeds the 60-day submission limit. Additionally, the airfare receipt is missing, making the claim ineligible for reimbursement."
+  },
+  {
+    "claim_id": "CLM-004",
+    "decision": "Manual Review",
+    "approved_amount": 0.0,
+    "rejected_amount": 6495.0,
+    "deductions": [],
+    "missing_documents": [],
+    "policy_references": [
+      "POL-AIR-03",
+      "POL-APPR-04",
+      "POL-MR-02"
+    ],
+    "confidence": 0.5,
+    "reason_codes": [
+      "REQUIRES_VP_APPROVAL",
+      "NEEDS_VP_APPROVAL",
+      "LOW_CONFIDENCE"
+    ],
+    "explanation": "The claim requires VP approval for business class airfare, and the approval tier forces a manual review. [Guardrail: Business/first class needs VP approval] [Guardrail: Amount requires vp approval] [Guardrail: Confidence 0.5 below 0.6]"
+  },
+  {
+    "claim_id": "CLM-005",
+    "decision": "Manual Review",
+    "approved_amount": 500.0,
+    "rejected_amount": 140.0,
+    "deductions": [
+      {
+        "item": "lodging: 2 nights (resubmission)",
+        "amount": 140.0,
+        "reason": "Over lodging cap $250/night x 2 = $500"
+      }
+    ],
+    "missing_documents": [],
+    "policy_references": [
+      "POL-LODGE-01",
+      "POL-DUP-01",
+      "POL-MR-02"
+    ],
+    "confidence": 0.5,
+    "reason_codes": [
+      "OVER_LODGING_CAP",
+      "NEEDS_MANAGER_APPROVAL",
+      "SUSPECTED_DUPLICATE",
+      "LOW_CONFIDENCE"
+    ],
+    "explanation": "The claim is a duplicate of a prior submission (CLM-002) and the lodging expenses exceed the per-night cap. The approved amount is $500, but a manual review is required due to the duplicate nature of the claim. [Guardrail: Suspected duplicate claim] [Guardrail: Confidence 0.5 below 0.6]"
+  }
+]

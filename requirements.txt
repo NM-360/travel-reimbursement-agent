@@ -1,0 +1,8 @@
+# Plain, framework-free stack. No LangChain / LlamaIndex / etc.
+requests>=2.31      # talk to the local Ollama REST API
+streamlit>=1.33     # web UI
+chromadb>=0.5       # persistent vector store for semantic policy retrieval
+# Ollama itself is a separate install (https://ollama.com) — not a pip package.
+# Pull the models once:
+#   ollama pull qwen3:8b            # reasoning + tool-calling LLM
+#   ollama pull nomic-embed-text    # embeddings for semantic policy lookup

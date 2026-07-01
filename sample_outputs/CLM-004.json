@@ -1,0 +1,122 @@
+{
+  "decision": {
+    "claim_id": "CLM-004",
+    "decision": "Manual Review",
+    "approved_amount": 0.0,
+    "rejected_amount": 6495.0,
+    "deductions": [],
+    "missing_documents": [],
+    "policy_references": [
+      "POL-AIR-03",
+      "POL-APPR-04",
+      "POL-MR-02"
+    ],
+    "confidence": 0.5,
+    "reason_codes": [
+      "REQUIRES_VP_APPROVAL",
+      "NEEDS_VP_APPROVAL",
+      "LOW_CONFIDENCE"
+    ],
+    "explanation": "The claim requires VP approval for business class airfare, and the approval tier forces a manual review. [Guardrail: Business/first class needs VP approval] [Guardrail: Amount requires vp approval] [Guardrail: Confidence 0.5 below 0.6]"
+  },
+  "audit_trail": [
+    {
+      "tool": "check_eligibility",
+      "arguments": {},
+      "result": {
+        "eligible": true,
+        "issues": [],
+        "claim_age_days": 6
+      }
+    },
+    {
+      "tool": "check_duplicates",
+      "arguments": {},
+      "result": {
+        "suspected_duplicate": false,
+        "cross_claim_matches": [],
+        "in_claim_duplicates": []
+      }
+    },
+    {
+      "tool": "check_receipts",
+      "arguments": {},
+      "result": {
+        "missing_documents": [],
+        "undocumented_amount": 0.0,
+        "undocumented_ratio": 0.0,
+        "complete": true
+      }
+    },
+    {
+      "tool": "check_limits",
+      "arguments": {},
+      "result": {
+        "trip_region": "international",
+        "gross_amount": 6495.0,
+        "total_deductions": 0.0,
+        "approved_subtotal": 6495.0,
+        "deductions": [],
+        "flags": {
+          "requires_vp_approval": true,
+          "premium_economy_unqualified": false
+        },
+        "line_results": [
+          {
+            "category": "airfare",
+            "description": "Business class long haul",
+            "amount": 4200.0,
+            "allowed_amount": 4200.0,
+            "deducted_amount": 0.0,
+            "reasons": [
+              "Business class requires VP approval"
+            ],
+            "policy_ids": [
+              "POL-AIR-03"
+            ]
+          },
+          {
+            "category": "lodging",
+            "description": "4 nights",
+            "amount": 1400.0,
+            "allowed_amount": 1400.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          },
+          {
+            "category": "meals",
+            "description": "Client dinner",
+            "amount": 95.0,
+            "allowed_amount": 95.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          },
+          {
+            "category": "conference",
+            "description": "Registration",
+            "amount": 800.0,
+            "allowed_amount": 800.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          }
+        ]
+      }
+    },
+    {
+      "tool": "check_approval",
+      "arguments": {
+        "net_amount": 6495
+      },
+      "result": {
+        "net_amount": 6495.0,
+        "required_approver": "vp",
+        "forces_manual_review": true,
+        "policy_id": "POL-APPR-04"
+      }
+    }
+  ],
+  "raw": "{\n  \"claim_id\": \"CLM-004\",\n  \"decision\": \"Manual Review\",\n  \"approved_amount\": 0.0,\n  \"rejected_amount\": 6495.0,\n  \"deductions\": [],\n  \"missing_documents\": [],\n  \"policy_references\": [\"POL-AIR-03\", \"POL-APPR-04\"],\n  \"confidence\": 0.5,\n  \"reason_codes\": [\"REQUIRES_VP_APPROVAL\"],\n  \"explanation\": \"The claim requires VP approval for business class airfare, and the approval tier forces a manual review.\"\n}"
+}

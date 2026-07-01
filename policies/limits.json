@@ -1,0 +1,22 @@
+{
+  "currency": "USD",
+  "per_diem": {
+    "meals": { "domestic": 75, "international": 100 },
+    "lodging_per_night": { "domestic": 250, "international": 350 },
+    "ground_transport_per_day": { "domestic": 50, "international": 50 }
+  },
+  "receipt_required_above": 25,
+  "always_require_receipt": ["airfare", "lodging"],
+  "non_reimbursable_keywords": [
+    "alcohol", "wine", "beer", "cocktail", "minibar", "spa",
+    "movie", "in-room entertainment", "personal", "gift"
+  ],
+  "airfare_rules": {
+    "economy": { "policy_id": "POL-AIR-01", "allowed": true },
+    "premium_economy": { "policy_id": "POL-AIR-02", "allowed_if_flight_hours_over": 6 },
+    "business": { "policy_id": "POL-AIR-03", "requires": "vp_approval" },
+    "first": { "policy_id": "POL-AIR-03", "requires": "vp_approval" }
+  },
+  "submission_window_days": 60,
+  "categories": ["airfare", "lodging", "meals", "ground_transport", "conference", "misc"]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Approval authority based on NET reimbursable amount after deductions.",
+  "tiers": [
+    { "policy_id": "POL-APPR-01", "max_amount": 500,   "approver": "auto",     "manual_review": false },
+    { "policy_id": "POL-APPR-02", "max_amount": 2000,  "approver": "manager",  "manual_review": false },
+    { "policy_id": "POL-APPR-03", "max_amount": 5000,  "approver": "director", "manual_review": false },
+    { "policy_id": "POL-APPR-04", "max_amount": null,  "approver": "vp",       "manual_review": true }
+  ],
+  "manual_review_confidence_threshold": 0.6
+}

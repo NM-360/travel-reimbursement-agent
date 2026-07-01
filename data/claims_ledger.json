@@ -1,0 +1,7 @@
+{
+  "description": "Mock ledger of previously APPROVED/submitted claim line items, used by the duplicate_detector tool.",
+  "entries": [
+    { "claim_id": "CLM-002", "employee_id": "E1002", "date": "2026-05-18", "vendor": "Marriott", "amount": 640.00, "category": "lodging" },
+    { "claim_id": "CLM-000", "employee_id": "E1001", "date": "2026-01-15", "vendor": "Delta", "amount": 410.00, "category": "airfare" }
+  ]
+}

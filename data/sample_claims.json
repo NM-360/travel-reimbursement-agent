@@ -1,0 +1,82 @@
+[
+  {
+    "claim_id": "CLM-001",
+    "employee_id": "E1001",
+    "employee_name": "Asha Patel",
+    "trip_destination": "Chicago, IL",
+    "trip_type": "domestic",
+    "trip_start": "2026-06-02",
+    "trip_end": "2026-06-04",
+    "submitted_date": "2026-06-10",
+    "currency": "USD",
+    "line_items": [
+      { "date": "2026-06-02", "category": "airfare", "vendor": "United", "description": "Economy round trip", "amount": 180.00, "attachment": true, "fare_class": "economy", "flight_hours": 2 },
+      { "date": "2026-06-02", "category": "lodging", "vendor": "Hilton", "description": "1 night", "amount": 150.00, "attachment": true, "nights": 1 },
+      { "date": "2026-06-03", "category": "meals", "vendor": "Local Diner", "description": "Dinner", "amount": 38.00, "attachment": true },
+      { "date": "2026-06-03", "category": "ground_transport", "vendor": "Uber", "description": "Airport to hotel", "amount": 28.00, "attachment": true }
+    ]
+  },
+  {
+    "claim_id": "CLM-002",
+    "employee_id": "E1002",
+    "employee_name": "Marcus Lee",
+    "trip_destination": "Austin, TX",
+    "trip_type": "domestic",
+    "trip_start": "2026-05-18",
+    "trip_end": "2026-05-20",
+    "submitted_date": "2026-05-28",
+    "currency": "USD",
+    "line_items": [
+      { "date": "2026-05-18", "category": "lodging", "vendor": "Marriott", "description": "2 nights", "amount": 640.00, "attachment": true, "nights": 2 },
+      { "date": "2026-05-19", "category": "meals", "vendor": "Steakhouse", "description": "Dinner incl. wine", "amount": 120.00, "attachment": true },
+      { "date": "2026-05-19", "category": "meals", "vendor": "Hotel Bar", "description": "Cocktails", "amount": 45.00, "attachment": true },
+      { "date": "2026-05-19", "category": "ground_transport", "vendor": "Lyft", "description": "Multiple rides", "amount": 72.00, "attachment": true }
+    ]
+  },
+  {
+    "claim_id": "CLM-003",
+    "employee_id": "E1003",
+    "employee_name": "Dana Cruz",
+    "trip_destination": "Denver, CO",
+    "trip_type": "domestic",
+    "trip_start": "2026-03-01",
+    "trip_end": "2026-03-03",
+    "submitted_date": "2026-06-25",
+    "currency": "USD",
+    "line_items": [
+      { "date": "2026-03-01", "category": "airfare", "vendor": "Frontier", "description": "Economy", "amount": 280.00, "attachment": false, "fare_class": "economy", "flight_hours": 2 },
+      { "date": "2026-03-02", "category": "meals", "vendor": "Cafe", "description": "Lunch", "amount": 18.00, "attachment": false }
+    ]
+  },
+  {
+    "claim_id": "CLM-004",
+    "employee_id": "E1004",
+    "employee_name": "Priya Nair",
+    "trip_destination": "London, UK",
+    "trip_type": "international",
+    "trip_start": "2026-06-08",
+    "trip_end": "2026-06-12",
+    "submitted_date": "2026-06-18",
+    "currency": "USD",
+    "line_items": [
+      { "date": "2026-06-08", "category": "airfare", "vendor": "British Airways", "description": "Business class long haul", "amount": 4200.00, "attachment": true, "fare_class": "business", "flight_hours": 9, "vp_approval": false },
+      { "date": "2026-06-08", "category": "lodging", "vendor": "Savoy", "description": "4 nights", "amount": 1400.00, "attachment": true, "nights": 4 },
+      { "date": "2026-06-10", "category": "meals", "vendor": "Restaurant", "description": "Client dinner", "amount": 95.00, "attachment": true },
+      { "date": "2026-06-11", "category": "conference", "vendor": "TechSummit", "description": "Registration", "amount": 800.00, "attachment": true }
+    ]
+  },
+  {
+    "claim_id": "CLM-005",
+    "employee_id": "E1002",
+    "employee_name": "Marcus Lee",
+    "trip_destination": "Austin, TX",
+    "trip_type": "domestic",
+    "trip_start": "2026-05-18",
+    "trip_end": "2026-05-20",
+    "submitted_date": "2026-06-01",
+    "currency": "USD",
+    "line_items": [
+      { "date": "2026-05-18", "category": "lodging", "vendor": "Marriott", "description": "2 nights (resubmission)", "amount": 640.00, "attachment": true, "nights": 2 }
+    ]
+  }
+]

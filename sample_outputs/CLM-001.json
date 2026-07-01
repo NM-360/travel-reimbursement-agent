@@ -1,0 +1,110 @@
+{
+  "decision": {
+    "claim_id": "CLM-001",
+    "decision": "Approve",
+    "approved_amount": 396.0,
+    "rejected_amount": 0.0,
+    "deductions": [],
+    "missing_documents": [],
+    "policy_references": [],
+    "confidence": 1.0,
+    "reason_codes": [],
+    "explanation": "All line items are within the per-diem caps, receipts are complete, and the claim is eligible for reimbursement. No deductions or exceptions are required."
+  },
+  "audit_trail": [
+    {
+      "tool": "check_eligibility",
+      "arguments": {},
+      "result": {
+        "eligible": true,
+        "issues": [],
+        "claim_age_days": 6
+      }
+    },
+    {
+      "tool": "check_duplicates",
+      "arguments": {},
+      "result": {
+        "suspected_duplicate": false,
+        "cross_claim_matches": [],
+        "in_claim_duplicates": []
+      }
+    },
+    {
+      "tool": "check_receipts",
+      "arguments": {},
+      "result": {
+        "missing_documents": [],
+        "undocumented_amount": 0.0,
+        "undocumented_ratio": 0.0,
+        "complete": true
+      }
+    },
+    {
+      "tool": "check_limits",
+      "arguments": {},
+      "result": {
+        "trip_region": "domestic",
+        "gross_amount": 396.0,
+        "total_deductions": 0.0,
+        "approved_subtotal": 396.0,
+        "deductions": [],
+        "flags": {
+          "requires_vp_approval": false,
+          "premium_economy_unqualified": false
+        },
+        "line_results": [
+          {
+            "category": "airfare",
+            "description": "Economy round trip",
+            "amount": 180.0,
+            "allowed_amount": 180.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          },
+          {
+            "category": "lodging",
+            "description": "1 night",
+            "amount": 150.0,
+            "allowed_amount": 150.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          },
+          {
+            "category": "meals",
+            "description": "Dinner",
+            "amount": 38.0,
+            "allowed_amount": 38.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          },
+          {
+            "category": "ground_transport",
+            "description": "Airport to hotel",
+            "amount": 28.0,
+            "allowed_amount": 28.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          }
+        ]
+      }
+    },
+    {
+      "tool": "check_approval",
+      "arguments": {
+        "net_amount": 396
+      },
+      "result": {
+        "net_amount": 396.0,
+        "required_approver": "auto",
+        "forces_manual_review": false,
+        "policy_id": "POL-APPR-01"
+      }
+    }
+  ],
+  "raw": "{\n  \"claim_id\": \"CLM-001\",\n  \"decision\": \"Approve\",\n  \"approved_amount\": 396.0,\n  \"rejected_amount\": 0.0,\n  \"deductions\": [],\n  \"missing_documents\": [],\n  \"policy_references\": [],\n  \"confidence\": 1.0,\n  \"reason_codes\": [],\n  \"explanation\": \"All line items are within the per-diem caps, receipts are complete, and the claim is eligible for reimbursement. No deductions or exceptions are required.\"\n}"
+}

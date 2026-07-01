@@ -1,0 +1,199 @@
+{
+  "decision": {
+    "claim_id": "CLM-002",
+    "decision": "Partially Approve",
+    "approved_amount": 550.0,
+    "rejected_amount": 327.0,
+    "deductions": [
+      {
+        "item": "lodging: 2 nights",
+        "amount": 140.0,
+        "reason": "Over lodging cap $250/night x 2 = $500"
+      },
+      {
+        "item": "meals: Dinner incl. wine",
+        "amount": 120.0,
+        "reason": "Non-reimbursable item detected ('wine')"
+      },
+      {
+        "item": "meals: Cocktails",
+        "amount": 45.0,
+        "reason": "Non-reimbursable item detected ('cocktail')"
+      },
+      {
+        "item": "ground_transport on 2026-05-19",
+        "amount": 22.0,
+        "reason": "Over ground transport cap $50/day (claimed $72.0)"
+      }
+    ],
+    "missing_documents": [],
+    "policy_references": [
+      "POL-LODGE-01",
+      "POL-MEAL-02",
+      "POL-GEN-04",
+      "POL-GROUND-01",
+      "POL-APPR-02"
+    ],
+    "confidence": 0.95,
+    "reason_codes": [
+      "OVER_LODGING_CAP",
+      "NON_REIMBURSABLE_ITEM",
+      "OVER_GROUND_TRANSPORT_CAP",
+      "NEEDS_MANAGER_APPROVAL"
+    ],
+    "explanation": "The claim is partially approved with a total of $550.00 approved. The lodging, meals (wine and cocktails), and ground transport are partially or fully rejected due to exceeding caps or non-reimbursable items. The claim is eligible and requires manager approval."
+  },
+  "audit_trail": [
+    {
+      "tool": "check_eligibility",
+      "arguments": {
+        "claim_id": "CLM-002"
+      },
+      "result": {
+        "eligible": true,
+        "issues": [],
+        "claim_age_days": 8
+      }
+    },
+    {
+      "tool": "check_duplicates",
+      "arguments": {
+        "claim_id": "CLM-002"
+      },
+      "result": {
+        "suspected_duplicate": false,
+        "cross_claim_matches": [],
+        "in_claim_duplicates": []
+      }
+    },
+    {
+      "tool": "check_receipts",
+      "arguments": {
+        "claim_id": "CLM-002"
+      },
+      "result": {
+        "missing_documents": [],
+        "undocumented_amount": 0.0,
+        "undocumented_ratio": 0.0,
+        "complete": true
+      }
+    },
+    {
+      "tool": "check_limits",
+      "arguments": {
+        "claim_id": "CLM-002"
+      },
+      "result": {
+        "trip_region": "domestic",
+        "gross_amount": 877.0,
+        "total_deductions": 327.0,
+        "approved_subtotal": 550.0,
+        "deductions": [
+          {
+            "item": "lodging: 2 nights",
+            "amount": 140.0,
+            "reason": "Over lodging cap $250/night x 2 = $500",
+            "policy_ids": [
+              "POL-LODGE-01"
+            ]
+          },
+          {
+            "item": "meals: Dinner incl. wine",
+            "amount": 120.0,
+            "reason": "Non-reimbursable item detected ('wine')",
+            "policy_ids": [
+              "POL-MEAL-02",
+              "POL-GEN-04"
+            ]
+          },
+          {
+            "item": "meals: Cocktails",
+            "amount": 45.0,
+            "reason": "Non-reimbursable item detected ('cocktail')",
+            "policy_ids": [
+              "POL-MEAL-02",
+              "POL-GEN-04"
+            ]
+          },
+          {
+            "item": "ground_transport on 2026-05-19",
+            "amount": 22.0,
+            "reason": "Over ground transport cap $50/day (claimed $72.0)",
+            "policy_ids": [
+              "POL-GROUND-01"
+            ]
+          }
+        ],
+        "flags": {
+          "requires_vp_approval": false,
+          "premium_economy_unqualified": false
+        },
+        "line_results": [
+          {
+            "category": "lodging",
+            "description": "2 nights",
+            "amount": 640.0,
+            "allowed_amount": 500.0,
+            "deducted_amount": 140.0,
+            "reasons": [
+              "Over lodging cap $250/night x 2 = $500"
+            ],
+            "policy_ids": [
+              "POL-LODGE-01"
+            ]
+          },
+          {
+            "category": "meals",
+            "description": "Dinner incl. wine",
+            "amount": 120.0,
+            "allowed_amount": 0.0,
+            "deducted_amount": 120.0,
+            "reasons": [
+              "Non-reimbursable item detected ('wine')"
+            ],
+            "policy_ids": [
+              "POL-MEAL-02",
+              "POL-GEN-04"
+            ]
+          },
+          {
+            "category": "meals",
+            "description": "Cocktails",
+            "amount": 45.0,
+            "allowed_amount": 0.0,
+            "deducted_amount": 45.0,
+            "reasons": [
+              "Non-reimbursable item detected ('cocktail')"
+            ],
+            "policy_ids": [
+              "POL-MEAL-02",
+              "POL-GEN-04"
+            ]
+          },
+          {
+            "category": "ground_transport",
+            "description": "Multiple rides",
+            "amount": 72.0,
+            "allowed_amount": 72.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          }
+        ]
+      }
+    },
+    {
+      "tool": "check_approval",
+      "arguments": {
+        "net_amount": 550
+      },
+      "result": {
+        "net_amount": 550.0,
+        "required_approver": "manager",
+        "forces_manual_review": false,
+        "policy_id": "POL-APPR-02"
+      }
+    }
+  ],
+  "raw": "{\n  \"claim_id\": \"CLM-002\",\n  \"decision\": \"Partially Approve\",\n  \"approved_amount\": 550.0,\n  \"rejected_amount\": 327.0,\n  \"deductions\": [\n    {\"item\": \"lodging: 2 nights\", \"amount\": 140.0, \"reason\": \"Over lodging cap $250/night x 2 = $500\"},\n    {\"item\": \"meals: Dinner incl. wine\", \"amount\": 120.0, \"reason\": \"Non-reimbursable item detected ('wine')\"},\n    {\"item\": \"meals: Cocktails\", \"amount\": 45.0, \"reason\": \"Non-reimbursable item detected ('cocktail')\"},\n    {\"item\": \"ground_transport on 2026-05-19\", \"amount\": 22.0, \"reason\": \"Over ground transport cap $50/day (claimed $72.0)\"}\n  ],\n  \"missing_documents\": [],\n  \"policy_references\": [\"POL-LODGE-01\", \"POL-MEAL-02\", \"POL-GEN-04\", \"POL-GROUND-01\", \"POL-APPR-02\"],\n  \"confidence\": 0.95,\n  \"reason_codes\": [\"OVER_LODGING_CAP\", \"NON_REIMBURSABLE_ITEM\", \"OVER_GROUND_TRANSPORT_CAP\"],\n  \"explanation\": \"The claim is partially approved with a total of $550.00 approved. The lodging, meals (wine and cocktails), and ground transport are partially or fully rejected due to exceeding caps or non-reimbursable items. The claim is eligible and requires manager approval.\"\n}"
+}

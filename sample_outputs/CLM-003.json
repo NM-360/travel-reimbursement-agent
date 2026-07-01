@@ -1,0 +1,114 @@
+{
+  "decision": {
+    "claim_id": "CLM-003",
+    "decision": "Reject",
+    "approved_amount": 0.0,
+    "rejected_amount": 298.0,
+    "deductions": [],
+    "missing_documents": [
+      "airfare: Economy"
+    ],
+    "policy_references": [
+      "POL-GEN-02",
+      "POL-DOC-02"
+    ],
+    "confidence": 0.95,
+    "reason_codes": [
+      "STALE_SUBMISSION",
+      "NEEDS_RECEIPTS"
+    ],
+    "explanation": "The claim was submitted 114 days after the trip end, which exceeds the 60-day submission limit. Additionally, the airfare receipt is missing, making the claim ineligible for reimbursement."
+  },
+  "audit_trail": [
+    {
+      "tool": "check_eligibility",
+      "arguments": {
+        "claim_id": "CLM-003"
+      },
+      "result": {
+        "eligible": false,
+        "issues": [
+          {
+            "type": "stale_submission",
+            "detail": "Submitted 114 days after trip end (limit 60)",
+            "policy_ids": [
+              "POL-GEN-02"
+            ],
+            "severity": "reject"
+          }
+        ],
+        "claim_age_days": 114
+      }
+    },
+    {
+      "tool": "check_duplicates",
+      "arguments": {
+        "claim_id": "CLM-003"
+      },
+      "result": {
+        "suspected_duplicate": false,
+        "cross_claim_matches": [],
+        "in_claim_duplicates": []
+      }
+    },
+    {
+      "tool": "check_receipts",
+      "arguments": {
+        "claim_id": "CLM-003"
+      },
+      "result": {
+        "missing_documents": [
+          {
+            "item": "airfare: Economy",
+            "amount": 280.0,
+            "reason": "Receipt required but attachment missing",
+            "policy_ids": [
+              "POL-DOC-02"
+            ]
+          }
+        ],
+        "undocumented_amount": 280.0,
+        "undocumented_ratio": 0.94,
+        "complete": false
+      }
+    },
+    {
+      "tool": "check_limits",
+      "arguments": {
+        "claim_id": "CLM-003"
+      },
+      "result": {
+        "trip_region": "domestic",
+        "gross_amount": 298.0,
+        "total_deductions": 0.0,
+        "approved_subtotal": 298.0,
+        "deductions": [],
+        "flags": {
+          "requires_vp_approval": false,
+          "premium_economy_unqualified": false
+        },
+        "line_results": [
+          {
+            "category": "airfare",
+            "description": "Economy",
+            "amount": 280.0,
+            "allowed_amount": 280.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          },
+          {
+            "category": "meals",
+            "description": "Lunch",
+            "amount": 18.0,
+            "allowed_amount": 18.0,
+            "deducted_amount": 0.0,
+            "reasons": [],
+            "policy_ids": []
+          }
+        ]
+      }
+    }
+  ],
+  "raw": "{\n  \"claim_id\": \"CLM-003\",\n  \"decision\": \"Reject\",\n  \"approved_amount\": 0.0,\n  \"rejected_amount\": 298.0,\n  \"deductions\": [],\n  \"missing_documents\": [\"airfare: Economy\"],\n  \"policy_references\": [\"POL-GEN-02\", \"POL-DOC-02\"],\n  \"confidence\": 0.95,\n  \"reason_codes\": [\"STALE_SUBMISSION\", \"NEEDS_RECEIPTS\"],\n  \"explanation\": \"The claim was submitted 114 days after the trip end, which exceeds the 60-day submission limit. Additionally, the airfare receipt is missing, making the claim ineligible for reimbursement.\"\n}"
+}

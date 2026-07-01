@@ -1,0 +1,123 @@
+{
+  "decision": {
+    "claim_id": "CLM-005",
+    "decision": "Manual Review",
+    "approved_amount": 500.0,
+    "rejected_amount": 140.0,
+    "deductions": [
+      {
+        "item": "lodging: 2 nights (resubmission)",
+        "amount": 140.0,
+        "reason": "Over lodging cap $250/night x 2 = $500"
+      }
+    ],
+    "missing_documents": [],
+    "policy_references": [
+      "POL-LODGE-01",
+      "POL-DUP-01",
+      "POL-MR-02"
+    ],
+    "confidence": 0.5,
+    "reason_codes": [
+      "OVER_LODGING_CAP",
+      "NEEDS_MANAGER_APPROVAL",
+      "SUSPECTED_DUPLICATE",
+      "LOW_CONFIDENCE"
+    ],
+    "explanation": "The claim is a duplicate of a prior submission (CLM-002) and the lodging expenses exceed the per-night cap. The approved amount is $500, but a manual review is required due to the duplicate nature of the claim. [Guardrail: Suspected duplicate claim] [Guardrail: Confidence 0.5 below 0.6]"
+  },
+  "audit_trail": [
+    {
+      "tool": "check_eligibility",
+      "arguments": {
+        "currency": "USD",
+        "submitted_date": "2026-06-01"
+      },
+      "result": {
+        "eligible": true,
+        "issues": [],
+        "claim_age_days": 12
+      }
+    },
+    {
+      "tool": "check_duplicates",
+      "arguments": {},
+      "result": {
+        "suspected_duplicate": true,
+        "cross_claim_matches": [
+          {
+            "item": "lodging: 2 nights (resubmission)",
+            "amount": 640.0,
+            "matches_prior_claim": "CLM-002",
+            "policy_ids": [
+              "POL-DUP-01"
+            ]
+          }
+        ],
+        "in_claim_duplicates": []
+      }
+    },
+    {
+      "tool": "check_receipts",
+      "arguments": {},
+      "result": {
+        "missing_documents": [],
+        "undocumented_amount": 0.0,
+        "undocumented_ratio": 0.0,
+        "complete": true
+      }
+    },
+    {
+      "tool": "check_limits",
+      "arguments": {},
+      "result": {
+        "trip_region": "domestic",
+        "gross_amount": 640.0,
+        "total_deductions": 140.0,
+        "approved_subtotal": 500.0,
+        "deductions": [
+          {
+            "item": "lodging: 2 nights (resubmission)",
+            "amount": 140.0,
+            "reason": "Over lodging cap $250/night x 2 = $500",
+            "policy_ids": [
+              "POL-LODGE-01"
+            ]
+          }
+        ],
+        "flags": {
+          "requires_vp_approval": false,
+          "premium_economy_unqualified": false
+        },
+        "line_results": [
+          {
+            "category": "lodging",
+            "description": "2 nights (resubmission)",
+            "amount": 640.0,
+            "allowed_amount": 500.0,
+            "deducted_amount": 140.0,
+            "reasons": [
+              "Over lodging cap $250/night x 2 = $500"
+            ],
+            "policy_ids": [
+              "POL-LODGE-01"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "tool": "check_approval",
+      "arguments": {
+        "net_amount": 500
+      },
+      "result": {
+        "net_amount": 500.0,
+        "required_approver": "auto",
+        "forces_manual_review": false,
+        "policy_id": "POL-APPR-01"
+      }
+    }
+  ],
+  "raw": "{\n  \"claim_id\": \"CLM-005\",\n  \"decision\": \"Manual Review\",\n  \"approved_amount\": 500.0,\n  \"rejected_amount\": 140.0,\n  \"deductions\": [\n    {\n      \"item\": \"lodging: 2 nights (resubmission)\",\n      \"amount\": 140.0,\n      \"reason\": \"Over lodging cap $250/night x 2 = $500\"\n    }\n  ],\n  \"missing_documents\": [],\n  \"policy_references\": [\"POL-LODGE-01\", \"POL-DUP-01\"],\n  \"confidence\": 0.5,\n  \"reason_codes\": [\"OVER_LODGING_CAP\", \"NEEDS_MANAGER_APPROVAL\"],\n  \"explanation\": \"The claim is a duplicate of a prior submission (CLM-002) and the lodging expenses exceed the per-night cap. The approved amount is $500, but a manual review is required due to the duplicate nature of the claim.\"\n}"
+}
