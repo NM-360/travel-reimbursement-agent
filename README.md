@@ -10,6 +10,14 @@ hand-written tool-calling agent loop, a local **Ollama** LLM (`qwen3:8b`) for
 reasoning, **`nomic-embed-text`** embeddings stored in a persistent **ChromaDB**
 vector store for semantic policy retrieval, and a **Streamlit** UI.
 
+## Demo
+
+A partially-approved claim in the Streamlit UI — showing the decision, approved
+vs. deducted amounts, per-line deductions, and cited policy references
+(more shots for every decision type in [`screenshots/`](screenshots/)):
+
+![Partially Approve example](screenshots/02-partial-approve.png)
+
 ---
 
 ## 1. What it does (maps to the assignment)
